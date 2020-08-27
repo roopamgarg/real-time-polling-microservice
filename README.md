@@ -9,6 +9,7 @@ To Perform Real Time Polling In any application.
 * Publish new Poll 
 * Real Time voting in a poll(via [socket.io](https://socket.io/))
 
+
 ## Running Locally
 
 #### Prerequisites
