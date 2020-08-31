@@ -1,0 +1,23 @@
+{
+  "name": "poll",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "artillery run ./sockets/add-vote.test.yaml",
+    "start": "node ./index.js",
+    "socket": "node ./sockets/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "artillery": "^1.6.1",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.2",
+    "nodemon": "^2.0.4",
+    "socket.io": "^2.3.0"
+  }
+}

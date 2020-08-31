@@ -1,0 +1,14 @@
+<html>
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/socket.io-client@2.3.0/dist/socket.io.slim.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      ioClient = io.connect("http://localhost:5000");
+      ioClient.on("connect", socket => {
+        ioClient.send("Hello everybody!");
+        ioClient.on("message", msg => console.log(msg));
+      });
+    </script>
+  </body>
+</html>

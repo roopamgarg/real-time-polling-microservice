@@ -1,0 +1,19 @@
+config:
+  target: http://localhost:5000
+  phases:
+    - duration: 1
+      arrivalRate: 1000
+
+scenarios:
+    - name: My Socketio test
+      engine: socketio # Enable the Socket.io engine
+      flow:
+          - emit:
+              channel: "add-vote"
+              data: '{"id":"5f4b9b682740fd2a733ecd31","option":1}'
+
+          - emit:
+              channel: "get-poll"
+              data: "5f4b9b682740fd2a733ecd31"
+
+              
