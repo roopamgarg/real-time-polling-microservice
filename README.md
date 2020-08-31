@@ -3,7 +3,7 @@ To Perform Real Time Polling In any application.
 
 [Using Clean Architecture for Microservice APIs in Node.js with MongoDB and Express](https://www.youtube.com/watch?v=CnailTcJV_U)
 
-> In this video we talk about Bob Martin's Clean Architecture model and I will show you how we can apply it to a Microservice built in node.js with MongoDB and Express JS - @arcdev1
+> In this video they talk about Bob Martin's Clean Architecture model and I have apply it to a Microservice built in node.js with MongoDB and Express JS 
 
 ## Features
 * Publish new Poll 
