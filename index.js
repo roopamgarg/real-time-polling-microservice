@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require('cors')
 const { postPoll, postVote, getPollRequest } = require("./controllers");
 const makeCallback = require("./express-callback");
-
+require("./sockets/index")
 const PORT = 4000;
 const app = express();
 app.use(cors());
