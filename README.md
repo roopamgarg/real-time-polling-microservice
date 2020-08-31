@@ -33,7 +33,7 @@ Usually this is just: `mongod` on the command line.
 npm start
 ```
 
-To run in development mode where code is run by [babel-node](https://babeljs.io/docs/en/babel-node) via [nodemon](https://nodemon.io) and re-transpiled any time there is a change:
+To run in development mode
 ```bash
 npm run dev
 ```
