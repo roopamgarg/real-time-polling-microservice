@@ -2,7 +2,7 @@ config:
   target: http://localhost:5000
   phases:
     - duration: 1
-      arrivalRate: 1000
+      arrivalRate: 1
 
 scenarios:
     - name: My Socketio test
@@ -10,7 +10,7 @@ scenarios:
       flow:
           - emit:
               channel: "add-vote"
-              data: '{"id":"5f4b9b682740fd2a733ecd31","option":1}'
+              data: '{"id":"5f4d37be6bb8ec60b4eed5d1","option":1}'
 
           - emit:
               channel: "get-poll"

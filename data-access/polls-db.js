@@ -9,11 +9,10 @@ module.exports =  function makePollsDb () {
         await result.save();
         return result;
     }
-    function addVote (id,option) {
-        PollSchema.updateOne({_id:id},{$inc:{['answers.'+option+'.votes']:1}});
+    async function addVote (id,option) {
+        return PollSchema.updateOne({_id:id},{$inc:{['answers.'+option+'.votes']:1}});
     }
     async function fetch (id) {
-        
         const result = await PollSchema.findById(id);
         return result;
     }
