@@ -1,7 +1,8 @@
 require("./Schemas/polls");
 const makePollsDb = require("./polls-db");
 const Mongoose = require("mongoose");
-const url = "mongodb+srv://roopam_2:roopam321@cluster0.bfgns.mongodb.net/poll?retryWrites=true&w=majority"
+const { database } = require("../config");
+const url = process.env.database || database;
 Mongoose.connect(url, {
   useNewUrlParser: true,
 }).then(() => {
