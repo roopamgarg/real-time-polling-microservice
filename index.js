@@ -3,15 +3,28 @@ const bodyParser = require("body-parser");
 const cors = require('cors')
 const { postPoll, postVote, getPollRequest } = require("./controllers");
 const makeCallback = require("./express-callback");
-require("./sockets/index")
 const PORT = process.env.PORT || 4000;
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
+app.use(cors({
+  origin: "http://localhost:3000",
+  methods: ["GET", "POST"],
+  credentials : true
+}));
+const httpServer = require("http").createServer(app);
+require("./sockets/index")(httpServer,{ 
+  cors: {
+    origin: "http://localhost:3000",
+    methods: ["GET", "POST"],
+  credentials : true
+    
+  }
+});
+
+// app.use(bodyParser.json());
 
 app.post("/poll", makeCallback(postPoll));
 app.get("/get-poll/:id", makeCallback(getPollRequest))
-app.listen(PORT, () => {
+httpServer.listen(PORT, () => {
   console.log("Server is listening at " + PORT);
 });
 
