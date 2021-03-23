@@ -3,17 +3,18 @@ const bodyParser = require("body-parser");
 const cors = require('cors')
 const { postPoll, postVote, getPollRequest } = require("./controllers");
 const makeCallback = require("./express-callback");
+const { frontendUrl } = require("./config/prod");
 const PORT = process.env.PORT || 4000;
 const app = express();
 app.use(cors({
-  origin: "http://localhost:3000",
+  origin: frontendUrl,
   methods: ["GET", "POST"],
   credentials : true
 }));
 const httpServer = require("http").createServer(app);
 require("./sockets/index")(httpServer,{ 
   cors: {
-    origin: "http://localhost:3000",
+    origin: frontendUrl,
     methods: ["GET", "POST"],
   credentials : true
     
