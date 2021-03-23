@@ -21,7 +21,7 @@ require("./sockets/index")(httpServer,{
   }
 });
 
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
 
 app.post("/poll", makeCallback(postPoll));
 app.get("/get-poll/:id", makeCallback(getPollRequest))
